@@ -1,0 +1,131 @@
+.intro {
+    background: #000;
+    overflow: hidden;
+  
+    h1,p,span {
+      color: transparent;
+      font-weight: 400;
+      font-size: 6rem;
+    }
+      
+    h1 {
+      display: block;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+      
+    p, span {
+      display: inline-block;
+    }
+    
+    p {
+      font-size:10rem;
+      text-shadow: 0 0 221px transparent;
+      animation: showText 1s 1.5s 1 forwards ease-out;
+      font-family: $font_intro;
+      position: relative;
+      margin-left: 1rem;
+    }
+    
+    p:after {
+      content: "";
+      width: 30px;
+      background: #2eff2e;
+      height: 30px;
+      position: absolute;
+      top: 0px;
+      left: 200px;
+      border-radius: 100%;
+      transform-origin: center center;
+      box-shadow: 0 0 0px 103px #0c910c;
+      box-sizing: border-box;
+      transform: scale(0);
+      animation: scaleBounce .3s 2s 1 linear forwards;
+    }
+    
+    span {
+      text-shadow: -48px -203px 150px #fff,132px -203px 150px #fff;
+      animation: enterFromTop 1s ease-in 1 forwards;
+      font-family: $font_intro;
+      margin-top: 1rem;
+    }
+      
+    h1:after {
+      content: "";
+      display: block;
+      width: 200px;
+      height:4px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -300px;
+      margin-top: 160px;
+      border-radius: 100%;
+      background: #fff;
+      box-shadow: 32px 5px 0 #fff;
+      animation: moveShadow 1s ease-in-out infinite alternate, moveElement 1s 2.5s ease-in infinite;
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+  
+    .btn-intro {
+      @include vert;
+      top: 80%;
+    }
+      
+    @keyframes scaleBounce {
+      100% {
+        transform: scale(1);
+        opacity: 0.3;
+        background: transparent;
+        box-shadow: 0 0 20px 103px transparent;
+      }
+    }
+    
+    @keyframes moveLetters {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-40px);
+      }
+    }
+    
+    @keyframes moveElement {
+      30%, 50% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(690px);
+        opacity:0;
+      }
+    }
+    
+    @keyframes moveShadow {
+      100% {
+        box-shadow: -32px 5px 0 #fff;
+      }
+    }
+      
+    @keyframes enterFromTop {
+      100% {
+        text-shadow: 0 0 1px #fff, 0 0 1px #fff;
+      }
+    }
+    
+    @keyframes showText {
+      80% {
+        text-shadow: 0 0 1px #fff;
+      }
+      
+      100% {
+        text-shadow: 0 0 1px #2eff2e, 0 0 20px #2eff2e;
+      }
+    }
+  }
