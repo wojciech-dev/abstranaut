@@ -1,6 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
+@if ($section_1->count() > 0)
+    @foreach ($section_1 as $item)
+        <header class="masthead" style="background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('{{ asset('storage/' . $item->image) }}')">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">
+                            {{ $item->name }}
+                        </h1>
+                        <hr class="divider" />
+                        <h6 class="text-white">
+                            {{ $item->title }}
+                        </h6>
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">
+                        {{ $item->desc }}
+                        </p>
+                        <a class="btn btn-primary btn-xl" target="_blank" href="https://opensea.io/collection/abstraspace">Buy token</a>
+                    </div>
+        
+                    <div class="col-lg-8 my-3 my-lg-0 containter_social">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-discord"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+    @endforeach
+@endif
     <!-- orange-->
     <section class="page-section bg-primary" id="about">
         <div class="container px-4 px-lg-5">
@@ -48,7 +80,7 @@
     </section>
 
     <!-- Wykres-->
-    <section class="page-section bg-dark text-white">
+    <section class="page-section bg-dark text-white mb-3">
         <div class="container px-4 px-lg-5">
         <h2 class="text-center mt-0">Tu damy wykres</h2>
             <hr class="divider">
@@ -69,69 +101,32 @@
     <!-- Portfolio-->
     <div id="portfolio">
         <div class="container-fluid p-0">
+        <h2 class="text-center mt-0">Gallery</h2>
+            <hr class="divider">
             <div class="row g-0">
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                        <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                        <div class="portfolio-box-caption p-3">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
-                        </div>
-                    </a>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/7.jpg" alt="..." />
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/8.jpg" alt="..." />
                 </div>
             </div>
         </div>
@@ -142,59 +137,34 @@
         <div class="container px-4 px-lg-5">
         <h2 class="text-center mt-0">Mapa projektu</h2>
             <hr class="divider">
-            <div class="row gx-4 gx-lg-5">
+            <div class="row gx-4 gx-lg-5 lead">
               
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellat architecto voluptatibus modi quisquam cumque praesentium. Ipsam similique nostrum, atque nulla aliquam quos velit. Illo at voluptatibus quisquam molestias earum.
             </div>
     </section>
 
-    <!-- orange-->
+    <!-- faq-->
     <section class="page-section bg-primary" id="faq">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="text-white mt-0">FAQ</h2>
                     <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Kiedy kupijemy token?
-                            </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Jak wyjdzie kolejny dodatek
-                            </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Czy kupisz Diablo 2 Resurrected
-                            </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Tak. ale zaczekam jak będzie tańszy.
-                            </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Kiedy będzie najbliższy stream na Twitch?
-                            </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Jak kupie basen.
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </p>
+                </div>
+                <div class="faq_item text-white">
+                    <h3>Kiedy kupujemy prepaida do World of Warcraft?</h3>
+                    <p class="gx-4 gx-lg-5">Jak wyjdzie kolejny dodatke. This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4">
+                </div>
+                <div class="faq_item text-white">
+                    <h3>Czy kupujesz Diablo 2 remaster? </h3>
+                    <p class="gx-4 gx-lg-5">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4">
+                </div>
+                <div class="faq_item text-white">
+                    <h3>Kiedy zrobisz stream? </h3>
+                    <p class="gx-4 gx-lg-5">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4">
                 </div>
             </div>
         </div>
@@ -207,7 +177,7 @@
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2021</div>
                     <div class="col-lg-4 my-3 my-lg-0 containter_social">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-instagram"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-discord"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">

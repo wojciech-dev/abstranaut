@@ -11,25 +11,11 @@ abstranaut project
 
 Wymagania:
 
-1. jedna głowna strona albo intro na kliknięcie
 
-2. one page
-
-3. kilka abstra z cieniem
-
-4. bez galerii
-
-5. kolory: pomareancz ffb024, 2b93d9, 999999
+kolory: ffb024, 2b93d9, 999999
 
 6. tylko engb
 
-7. wersja na telefon
-
-8. dead line: nie ma
-
-9. Logo
-
-https://startbootstrap.com/previews/agency
 
 in / links
 

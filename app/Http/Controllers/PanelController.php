@@ -106,7 +106,9 @@ class PanelController extends Controller
         $oldImage = Post::find($post->id)->image;
 
         if (isset($data['image'])) {
-            unlink(storage_path('app/public/'.$oldImage));
+            if ($oldImage) {
+                unlink(storage_path('app/public/'.$oldImage));
+            }
             $path = $request->file('image')->store('photos');
             $data['image'] = $path;
         }

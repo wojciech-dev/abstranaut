@@ -21,8 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Learn</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Rarity</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#rarity">Rarity</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="#map">Roadmap</a></li>
@@ -30,32 +29,7 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 h-100">
-                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">
-                            AbstraSpace
-                        </h1>
-                        <hr class="divider" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">
-                        Morbi mattis aliquet mauris, at lacinia ex. Quisque cursus cursus pretium. Sed tincidunt, ante a blandit sodales, lorem lectus pulvinar lorem, vitae volutpat.
-                        </p>
-                        <a class="btn btn-primary btn-xl" target="_blank" href="https://opensea.io/collection/abstraspace">Buy token</a>
-                    </div>
-     
-                    <div class="col-lg-8 my-3 my-lg-0 containter_social">
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-facebook"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-discord"></i></a>
-                    </div>
 
-                </div>
-            </div>
-        </header>
 
   
         @yield('content')
