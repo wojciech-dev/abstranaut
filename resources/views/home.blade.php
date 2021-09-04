@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 @if ($section_1->count() > 0)
     @foreach ($section_1 as $item)
         <header class="masthead" style="background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('{{ asset('storage/' . $item->image) }}')">
@@ -16,9 +17,7 @@
                         </h6>
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">
-                        {{ $item->desc }}
-                        </p>
+                        <p class="text-white-75 mb-5">{!! $item->desc !!}</p>
                         <a class="btn btn-primary btn-xl" target="_blank" href="https://opensea.io/collection/abstraspace">Buy token</a>
                     </div>
         
@@ -33,71 +32,64 @@
         </header>
     @endforeach
 @endif
-    <!-- orange-->
-    <section class="page-section bg-primary" id="about">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">What is NFT?</h2>
-                    <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">
-                    Nulla tincidunt, dui quis eleifend cursus, metus nisi molestie felis, et congue arcu nulla a sem. Pellentesque urna neque, ullamcorper at turpis molestie, ornare sagittis eros.
-                    </p>
+@if ($section_2->count() > 0)
+    @foreach ($section_2 as $item)
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">{{ $item->name }}</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">
+                         {!! $item->desc !!}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- About-->
-    <section class="page-section" id="services">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Project</h2>
-            <hr class="divider">
-            <div class="row gx-4 gx-lg-5">
-                <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
-                </p>
-                <ul>
-                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-                <p>
-                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features.png" alt="" class="img-fluid">
+        </section>
+    @endforeach
+@endif
+@if ($section_3->count() > 0)
+    @foreach ($section_3 as $item)
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Project</h2>
+                <hr class="divider">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>{{ $item->name }}</h3>
+                            {!! $item->desc !!}
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wykres-->
-    <section class="page-section bg-dark text-white mb-3">
-        <div class="container px-4 px-lg-5">
-        <h2 class="text-center mt-0">Tu damy wykres</h2>
-            <hr class="divider">
-            <div class="row gx-4 gx-lg-5">
-              
-                <div class="col-lg-6 mt-3 mt-lg-0">
+        </section>
+    @endforeach
+@endif
+@if ($section_4->count() > 0)
+    @foreach ($section_4 as $item)
+        <section class="page-section bg-dark text-white mb-3">
+            <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">{{ $item->name }}</h2>
+                <hr class="divider">
+                <div class="row gx-4 gx-lg-5">
                 
-                <img src="assets/img/chart.jpg" alt="" class="img-fluid">
+                    <div class="col-lg-6 mt-3 mt-lg-0">
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6 text-left">
+                        <h3>{{ $item->title }}</h3>
+                        {!! $item->desc !!}
+                    </div>
                 </div>
-                <div class="col-lg-6 text-left">
-                <h3>I jakiś opis do niego Voluptatem dignissimos provident.</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quaerat quisquam earum, ipsa alias vero perspiciatis eaque optio, tenetur, ipsam eligendi voluptatem! Enim, at ex consequuntur cumque placeat fuga animi.
-                </div>
-            
-        </div>
-    </section>
-
+            </div>
+        </section>
+    @endforeach
+@endif
     <!-- Portfolio-->
     <div id="portfolio">
         <div class="container-fluid p-0">
