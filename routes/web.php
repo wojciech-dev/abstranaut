@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PanelController;
 
@@ -33,7 +34,7 @@ Route::get('/intro', function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::group(['middleware' => 'auth'], function() {
         Route::get('/panel', [PanelController::class, 'index'])->name('panel.index');
-        Route::post('/panel', [PanelController::class, 'store'])->name('panel.store');
+
         Route::get('/post/create', [PanelController::class, 'create'])->name('panel.create');
         Route::post('/post/create', [PanelController::class, 'store'])->name('panel.store');
 
@@ -41,5 +42,18 @@ Route::group(['prefix' => 'admin'], function() {
 
         Route::get('/post/edit/{post}', [PanelController::class, 'edit'])->name('panel.edit');
         Route::post('/post/{post}', [PanelController::class, 'update'])->name('panel.update');
+
+        //faq
+        Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
+  
+        Route::get('/faq/create', [FaqController::class, 'create'])->name('faq.create');
+        Route::post('/faq/create', [FaqController::class, 'store'])->name('faq.store');
+
+        Route::get('/faq/delete/{post}', [FaqController::class, 'destroy'])->name('faq.destroy');
+
+        Route::get('/faq/edit/{post}', [FaqController::class, 'edit'])->name('faq.edit');
+        Route::post('/faq/{post}', [FaqController::class, 'update'])->name('faq.update');
+
+
     });
 });

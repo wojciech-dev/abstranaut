@@ -3,21 +3,19 @@
 namespace App\Http\Controllers;
 
 use Session;
-use App\Models\Post;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class PanelController extends Controller
+class FaqController extends Controller
 {
 
     protected function validator($data)
     {
         $validated =  Validator::make($data, [
             'name' => 'required|max:255|regex:/^[a-zżźćńółęąśŻŹĆĄŚĘŁÓŃ?A-Z0-9\s]+$/',
-            'title' => 'nullable|regex:/^[a-zżźćńółęąśŻŹĆĄŚĘŁÓŃA-Z0-9\s]+$/',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'desc' => 'nullable'
         ])->validate();
 
@@ -31,8 +29,8 @@ class PanelController extends Controller
      */
     public function index(): View
     {   
-        return view('panel.index', [
-            'posts' => Post::paginate(10)
+        return view('panel.faq', [
+            'posts' => Faq::paginate(10)
         ]);
     }
 
@@ -43,7 +41,7 @@ class PanelController extends Controller
      */
     public function create()
     {
-        return view('panel.form', [
+        return view('panel.faqForm', [
             'action' => 'store'
         ]);
     }
@@ -54,38 +52,24 @@ class PanelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Post $post)
+    public function store(Request $request, Faq $post)
     {
         $data = $this->validator($request->all());
         $post->fill($data);
-        if (isset($data['image'])) {
-            $post->image = $request->file('image')->store('photos');
-        }
         $post->save();
-        return redirect(route('panel.index'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-
+        return redirect(route('faq.index')); 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Faq  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Faq $post)
     {
  
-        return view("panel.form", [
+        return view("panel.faqForm", [
             'post' => $post,
             'action' => 'update'
         ]);
@@ -95,43 +79,31 @@ class PanelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Faq  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Faq $post)
     {
         $data = $this->validator($request->all());
         $post->fill($data);
 
-        $oldImage = Post::find($post->id)->image;
-
-        if (isset($data['image'])) {
-            if ($oldImage) {
-                unlink(storage_path('app/public/'.$oldImage));
-            }
-            $path = $request->file('image')->store('photos');
-            $data['image'] = $path;
-        }
-
         $post->update($data);
  
-        return redirect(route('panel.index'));
+        return redirect(route('faq.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Faq  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Faq $post)
     {
         $post->delete();
 
-        Storage::delete($post->image);
-
         Session::flash('message', "Post has been deleted.");
 
-        return redirect(route('panel.index'));
+        return redirect(route('faq.index'));
     }
 }

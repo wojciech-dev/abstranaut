@@ -22,6 +22,9 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="/admin/panel">Dashboard</a>
                             </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/admin/faq">Faq</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin/post/create">Add post</a>
                             </li>

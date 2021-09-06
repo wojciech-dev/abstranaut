@@ -40,6 +40,9 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">{{ $item->name }}</h2>
                         <hr class="divider divider-light" />
+                        <h6 class="text-white">
+                            {{ $item->title }}
+                        </h6>
                         <p class="text-white-75 mb-4">
                          {!! $item->desc !!}
                         </p>
@@ -53,12 +56,12 @@
     @foreach ($section_3 as $item)
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">Project</h2>
+                <h2 class="text-center mt-0">{{ $item->name }}</h2>
                 <hr class="divider">
                 <div class="row gx-4 gx-lg-5">
                     <div class="row">
                         <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                            <h3>{{ $item->name }}</h3>
+                            <h3>{{ $item->title }}</h3>
                             {!! $item->desc !!}
                         </div>
                         <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -135,7 +138,7 @@
             </div>
     </section>
 
-    <!-- faq-->
+@if ($faq->count() > 0)
     <section class="page-section bg-primary" id="faq">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -143,30 +146,25 @@
                     <h2 class="text-white mt-0">FAQ</h2>
                     <hr class="divider divider-light" />
                 </div>
-                <div class="faq_item text-white">
-                    <h3>Kiedy kupujemy prepaida do World of Warcraft?</h3>
-                    <p class="gx-4 gx-lg-5">Jak wyjdzie kolejny dodatke. This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <hr class="my-4">
-                </div>
-                <div class="faq_item text-white">
-                    <h3>Czy kupujesz Diablo 2 remaster? </h3>
-                    <p class="gx-4 gx-lg-5">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <hr class="my-4">
-                </div>
-                <div class="faq_item text-white">
-                    <h3>Kiedy zrobisz stream? </h3>
-                    <p class="gx-4 gx-lg-5">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <hr class="my-4">
-                </div>
+                @foreach ($faq as $item)
+                    <div class="faq_item text-white">
+                        <h3>{{ $item->name }}</h3>
+                        <p class="gx-4 gx-lg-5">
+                            {!! $item->desc !!}
+                        </p>
+                        <hr class="my-4">
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
+@endif
 
     <!--footer-->
     <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2021</div>
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; 2021 <a href="http://wojciech-kondraciuk.pl/" target="_blank">wojciech-kondraciuk.pl/</a></div>
                     <div class="col-lg-4 my-3 my-lg-0 containter_social">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-instagram"></i></a>

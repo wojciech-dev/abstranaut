@@ -9,6 +9,7 @@
     <strong>{{ Session::get('message') }}</strong>
 </div>
 @endif
+    <h2>All posts</h2>
     <table class="table">
         <thead>
             <tr>
@@ -38,16 +39,16 @@
                     <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a 
+                            href="{{ route('panel.edit',  $post->id) }}" 
+                            class="edit btn btn-success" 
+                            data-id={{ $post->id }}
+                        >Edit</a>&nbsp;
+                        <a 
                             href="{{ route('panel.destroy',  $post->id) }}" 
                             class="delete btn btn-danger"
                             onclick="return confirm('Are you sure want to delete?');"
                             data-id={{ $post->id }}
-                        >delete</a>&nbsp;
-                        <a 
-                            href="{{ route('panel.edit',  $post->id) }}" 
-                            class="edit btn btn-success" 
-                            data-id={{ $post->id }}
-                        >edit</a>
+                        >Delete</a>&nbsp;
                     </div>
                     </td>
                 </tr>
