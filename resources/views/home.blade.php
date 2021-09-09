@@ -12,19 +12,19 @@
                             {{ $item->name }}
                         </h1>
                         <hr class="divider" />
-                        <h6 class="text-white">
+                        <h4 class="text-white h4">
                             {{ $item->title }}
-                        </h6>
+                        </h4>
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">{!! $item->desc !!}</p>
-                        <a class="btn btn-primary btn-xl" target="_blank" href="https://opensea.io/collection/abstraspace">Buy token</a>
+                        <a class="btn btn-primary btn-xl" target="_blank" href="https://opensea.io/collection/abstraspace">Buy AbstraSpace token</a>
+                        <a class="btn btn-primary btn-xl" target="_blank" href="https://opensea.io/collection/abstranaut-1">Buy AbstraNaut token</a>
                     </div>
-        
                     <div class="col-lg-8 my-3 my-lg-0 containter_social">
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-instagram"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-discord"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/AbstraNauts" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/abstranaut/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://discord.gg/zhRebMSKrx" target="_blank"><i class="bi bi-discord"></i></a>
                     </div>
 
                 </div>
@@ -73,8 +73,31 @@
         </section>
     @endforeach
 @endif
+
 @if ($section_4->count() > 0)
     @foreach ($section_4 as $item)
+        <section class="page-section bg-pink" id="rarity">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">{{ $item->name }}</h2>
+                <hr class="divider">
+                <div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="col">
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="col px-5">
+                            <h5 class="h5 mb-4"><strong>{{ $item->title }}</strong></h5>
+                            {!! $item->desc !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endforeach
+@endif
+
+@if ($section_5->count() > 0)
+    @foreach ($section_5 as $item)
         <section class="page-section bg-dark text-white mb-3">
             <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0">{{ $item->name }}</h2>
@@ -85,7 +108,7 @@
                         <img src="{{ asset('storage/' . $item->image) }}" alt="" class="img-fluid">
                     </div>
                     <div class="col-lg-6 text-left">
-                        <h3>{{ $item->title }}</h3>
+                        <h4 class="text-white h4">{{ $item->title }}</h3>
                         {!! $item->desc !!}
                     </div>
                 </div>
@@ -127,16 +150,19 @@
         </div>
     </div>
 
-    <!-- Mapa-->
-    <section class="page-section bg-dark text-white" id="map">
-        <div class="container px-4 px-lg-5">
-        <h2 class="text-center mt-0">Mapa projektu</h2>
-            <hr class="divider">
-            <div class="row gx-4 gx-lg-5 lead">
-              
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellat architecto voluptatibus modi quisquam cumque praesentium. Ipsam similique nostrum, atque nulla aliquam quos velit. Illo at voluptatibus quisquam molestias earum.
-            </div>
-    </section>
+    @if ($section_6->count() > 0)
+        @foreach ($section_6 as $item)
+        <section class="page-section bg-dark text-white" id="map">
+            <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">{{ $item->name }}</h2>
+                <hr class="divider">
+                <div class="row gx-4 gx-lg-5 lead">
+                <h3>{{ $item->title }}</h3>
+                    {!! $item->desc !!}
+                </div>
+        </section>
+        @endforeach
+    @endif
 
 @if ($faq->count() > 0)
     <section class="page-section bg-primary" id="faq">
@@ -166,9 +192,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; 2021 <a href="http://wojciech-kondraciuk.pl/" target="_blank">wojciech-kondraciuk.pl/</a></div>
                     <div class="col-lg-4 my-3 my-lg-0 containter_social">
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-instagram"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="bi bi-discord"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/AbstraNauts" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/abstranaut/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://discord.gg/zhRebMSKrx" target="_blank"><i class="bi bi-discord"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>

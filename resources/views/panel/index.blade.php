@@ -43,12 +43,6 @@
                             class="edit btn btn-success" 
                             data-id={{ $post->id }}
                         >Edit</a>&nbsp;
-                        <a 
-                            href="{{ route('panel.destroy',  $post->id) }}" 
-                            class="delete btn btn-danger"
-                            onclick="return confirm('Are you sure want to delete?');"
-                            data-id={{ $post->id }}
-                        >Delete</a>&nbsp;
                     </div>
                     </td>
                 </tr>

@@ -23,8 +23,8 @@
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#rarity">Rarity</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="#map">Roadmap</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     </ul>
                 </div>
             </div>

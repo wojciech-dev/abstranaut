@@ -20,6 +20,8 @@ class HomeController extends Controller
         $section_2 = Post::where('id', 2)->get();
         $section_3 = Post::where('id', 3)->get();
         $section_4 = Post::where('id', 4)->get();
+        $section_5 = Post::where('id', 5)->get();
+        $section_6 = Post::where('id', 6)->get();
         $faq = Faq::get();
 
 
@@ -28,6 +30,8 @@ class HomeController extends Controller
             'section_2' => $section_2,
             'section_3' => $section_3,
             'section_4' => $section_4,
+            'section_5' => $section_5,
+            'section_6' => $section_6,
             'faq' => $faq,
         ]);
     }
