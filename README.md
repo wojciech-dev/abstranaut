@@ -1,28 +1,21 @@
-abstranaut project
+## AbstraNaut website
 
-1. laravel new project
-2. cd project
-3. composer require laravel/ui --dev
-4. php artisan ui bootstrap --auth
-5. php artisan migrate
-6. npm install laravel-mix@latest --save-dev
-7. npm install -D webpack-cli
+website dedicated to the NFT project
 
+## Features
 
-Wymagania:
+- Landing page
+- simple admin panel
 
+## Technology
 
-kolory: ffb024, 2b93d9, 999999
+- Laravel 8
+- Mysql
+- Bootstrap
 
-resetowanie linku do zdjęć
-rm public/storage
-php artisan optimize:clear
-php artisan storage:link
+Preview edit post:
+<img src="http://propozycja.vot.pl/git/abstra.jpg" alt="">
 
-to dzialła na laravel8
-ln -s /home/deis/domains/abstranaut.vot.pl/abstranaut/storage/app/public/photos<spacja>/home/deis/domains/abstranaut.vot.pl/public_html/storage
+## Demo online
 
-
-wieksze ostepy
-
-font do zmiany
+[Visit online](http://abstranaut.vot.pl/)
