@@ -11471,3 +11471,8 @@ header.masthead h1, header.masthead .h1 {
     margin-bottom: 10px;
   }
 }
+
+footer a {
+  color: #213529;
+  text-decoration: none;
+}

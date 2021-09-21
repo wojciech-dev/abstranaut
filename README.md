@@ -1,11 +1,11 @@
 ## AbstraNaut website
 
-website dedicated to the NFT project
+Website dedicated to the NFT project.
 
 ## Features
 
 - Landing page
-- simple admin panel
+- Simple admin panel
 
 ## Technology
 
@@ -13,8 +13,11 @@ website dedicated to the NFT project
 - Mysql
 - Bootstrap
 
-Preview edit post:
-<img src="http://propozycja.vot.pl/git/abstra.jpg" alt="">
+Preview site:
+<img src="http://propozycja.vot.pl/git/abstra.jpg" alt="#">
+
+Preview admin panel:
+<img src="http://propozycja.vot.pl/git/abstra_panel.jpg" alt="#">
 
 ## Demo online
 
